@@ -1,0 +1,232 @@
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/day.js b/node_modules/react-native-ui-datepicker/lib/module/components/day.js
+index 74a4cd7..80b4eef 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/day.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/day.js
+@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
+ import { View, Pressable, StyleSheet, Text } from 'react-native';
+ import { CONTAINER_HEIGHT, WEEKDAYS_HEIGHT } from '../enums';
+ import { cn } from '../utils';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ export const EmptyDay = /*#__PURE__*/React.memo(() => {
+   return /*#__PURE__*/React.createElement(View, {
+     style: defaultStyles.dayWrapper
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/header/index.js b/node_modules/react-native-ui-datepicker/lib/module/components/header/index.js
+index 5984539..903d01f 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/header/index.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/header/index.js
+@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
+ import PrevButton from './prev-button';
+ import NextButton from './next-button';
+ import Selectors from './selectors';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ const createDefaultStyles = isRTL => StyleSheet.create({
+   headerContainer: {
+     paddingVertical: 3
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/header/next-button.js b/node_modules/react-native-ui-datepicker/lib/module/components/header/next-button.js
+index e181fb4..a9957fe 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/header/next-button.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/header/next-button.js
+@@ -2,7 +2,7 @@ import React, { memo, useCallback, useMemo } from 'react';
+ import { Image, Pressable, StyleSheet, useColorScheme, View } from 'react-native';
+ import { useCalendarContext } from '../../calendar-context';
+ import { YEAR_PAGE_SIZE } from '../../utils';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { COLORS } from '../../theme';
+ const arrow_right = require('../../assets/images/arrow_right.png');
+ const NextButton = ({
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/header/prev-button.js b/node_modules/react-native-ui-datepicker/lib/module/components/header/prev-button.js
+index 6877602..daadad5 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/header/prev-button.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/header/prev-button.js
+@@ -2,7 +2,7 @@ import React, { memo, useCallback, useMemo } from 'react';
+ import { Image, Pressable, StyleSheet, useColorScheme, View } from 'react-native';
+ import { useCalendarContext } from '../../calendar-context';
+ import { YEAR_PAGE_SIZE } from '../../utils';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { COLORS } from '../../theme';
+ const arrow_left = require('../../assets/images/arrow_left.png');
+ const PrevButton = ({
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-native.js b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-native.js
+index d5f371b..933bb96 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-native.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-native.js
+@@ -1,6 +1,6 @@
+ import React, { memo } from 'react';
+ import WheelPicker from './wheel-picker';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ const options = [{
+   value: 'AM',
+   text: 'AM'
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-web.js b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-web.js
+index 83549ce..36ec79d 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-web.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/period-web.js
+@@ -1,6 +1,6 @@
+ import React, { memo } from 'react';
+ import { Pressable, StyleSheet, Text, View } from 'react-native';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ const PeriodWeb = ({
+   value,
+   setValue = () => {},
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-picker/wheel-picker-item.js b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-picker/wheel-picker-item.js
+index b03950b..2dd8a2f 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-picker/wheel-picker-item.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-picker/wheel-picker-item.js
+@@ -1,7 +1,7 @@
+ import React from 'react';
+ import { Animated, Text } from 'react-native';
+ import styles from './wheel-picker.style';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ const WheelPickerItem = ({
+   textStyle,
+   textClassName,
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-web.js b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-web.js
+index fe7159b..b497e4c 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-web.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/components/time-picker/wheel-web.js
+@@ -3,7 +3,7 @@ import React, { memo, useMemo, useRef } from 'react';
+ import { Animated, PanResponder, StyleSheet, View, Platform, Text } from 'react-native';
+ import { sin } from './animated-math';
+ import { CONTAINER_HEIGHT } from '../../enums';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ const ITEM_HEIGHT = 44;
+ const WheelWeb = ({
+   value,
+diff --git a/node_modules/react-native-ui-datepicker/lib/module/utils.js b/node_modules/react-native-ui-datepicker/lib/module/utils.js
+index ce76677..281fdff 100644
+--- a/node_modules/react-native-ui-datepicker/lib/module/utils.js
++++ b/node_modules/react-native-ui-datepicker/lib/module/utils.js
+@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
+ import { clsx } from 'clsx';
+ import { twMerge } from 'tailwind-merge';
+ import { useRef } from 'react';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { numeralSystems } from './numerals';
+ export const CALENDAR_FORMAT = 'YYYY-MM-DD HH:mm';
+ export const DATE_FORMAT = 'YYYY-MM-DD';
+diff --git a/node_modules/react-native-ui-datepicker/src/components/day.tsx b/node_modules/react-native-ui-datepicker/src/components/day.tsx
+index 829524a..0f9d31c 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/day.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/day.tsx
+@@ -9,7 +9,7 @@ import {
+ } from '../types';
+ import { CONTAINER_HEIGHT, WEEKDAYS_HEIGHT } from '../enums';
+ import { cn } from '../utils';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ 
+ interface Props {
+   day: CalendarDay;
+diff --git a/node_modules/react-native-ui-datepicker/src/components/header/index.tsx b/node_modules/react-native-ui-datepicker/src/components/header/index.tsx
+index 21cc77c..5e32396 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/header/index.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/header/index.tsx
+@@ -4,7 +4,7 @@ import type { HeaderProps, NavigationProps } from './types';
+ import PrevButton from './prev-button';
+ import NextButton from './next-button';
+ import Selectors from './selectors';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ 
+ const createDefaultStyles = (isRTL: boolean) =>
+   StyleSheet.create({
+diff --git a/node_modules/react-native-ui-datepicker/src/components/header/next-button.tsx b/node_modules/react-native-ui-datepicker/src/components/header/next-button.tsx
+index bc36f13..19ded5f 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/header/next-button.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/header/next-button.tsx
+@@ -11,7 +11,7 @@ import { useCalendarContext } from '../../calendar-context';
+ import { YEAR_PAGE_SIZE } from '../../utils';
+ import { ClassNames, Styles } from '../../types';
+ import { UI } from '../../ui';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { COLORS } from '../../theme';
+ 
+ const arrow_right = require('../../assets/images/arrow_right.png');
+diff --git a/node_modules/react-native-ui-datepicker/src/components/header/prev-button.tsx b/node_modules/react-native-ui-datepicker/src/components/header/prev-button.tsx
+index 34475ac..7e7442b 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/header/prev-button.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/header/prev-button.tsx
+@@ -11,7 +11,7 @@ import { useCalendarContext } from '../../calendar-context';
+ import { YEAR_PAGE_SIZE } from '../../utils';
+ import { ClassNames, Styles } from '../../types';
+ import { UI } from '../../ui';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { COLORS } from '../../theme';
+ 
+ const arrow_left = require('../../assets/images/arrow_left.png');
+diff --git a/node_modules/react-native-ui-datepicker/src/components/time-picker/period-native.tsx b/node_modules/react-native-ui-datepicker/src/components/time-picker/period-native.tsx
+index e7a830f..d7335dc 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/time-picker/period-native.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/time-picker/period-native.tsx
+@@ -1,7 +1,7 @@
+ import React, { memo } from 'react';
+ import WheelPicker from './wheel-picker';
+ import { ClassNames, PickerOption, Styles } from '../../types';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ 
+ interface PeriodProps {
+   value: string;
+diff --git a/node_modules/react-native-ui-datepicker/src/components/time-picker/period-web.tsx b/node_modules/react-native-ui-datepicker/src/components/time-picker/period-web.tsx
+index a860876..ec54e41 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/time-picker/period-web.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/time-picker/period-web.tsx
+@@ -1,7 +1,7 @@
+ import React, { memo } from 'react';
+ import { Pressable, StyleSheet, Text, View } from 'react-native';
+ import { ClassNames, Styles } from '../../types';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ 
+ interface PeriodProps {
+   value: string;
+diff --git a/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-picker/wheel-picker-item.tsx b/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-picker/wheel-picker-item.tsx
+index 7f74030..d19c1d6 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-picker/wheel-picker-item.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-picker/wheel-picker-item.tsx
+@@ -1,7 +1,7 @@
+ import React from 'react';
+ import { StyleProp, TextStyle, Animated, ViewStyle, Text } from 'react-native';
+ import styles from './wheel-picker.style';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { PickerOption } from 'src/types';
+ 
+ interface ItemProps {
+diff --git a/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-web.tsx b/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-web.tsx
+index e74fd8b..c285853 100644
+--- a/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-web.tsx
++++ b/node_modules/react-native-ui-datepicker/src/components/time-picker/wheel-web.tsx
+@@ -10,7 +10,7 @@ import {
+ import { sin } from './animated-math';
+ import { CONTAINER_HEIGHT } from '../../enums';
+ import { ClassNames, Styles, PickerOption } from '../../types';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ 
+ interface WheelProps {
+   value: number | string;
+diff --git a/node_modules/react-native-ui-datepicker/src/utils.ts b/node_modules/react-native-ui-datepicker/src/utils.ts
+index 655acf1..96f784a 100644
+--- a/node_modules/react-native-ui-datepicker/src/utils.ts
++++ b/node_modules/react-native-ui-datepicker/src/utils.ts
+@@ -10,7 +10,7 @@ import type {
+ import { clsx, type ClassValue } from 'clsx';
+ import { twMerge } from 'tailwind-merge';
+ import { useRef } from 'react';
+-import { isEqual } from 'lodash';
++import isEqual from 'lodash.isequal';
+ import { numeralSystems } from './numerals';
+ 
+ export const CALENDAR_FORMAT = 'YYYY-MM-DD HH:mm';
