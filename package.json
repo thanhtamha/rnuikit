@@ -9,7 +9,6 @@
     "start": "react-native start --reset-cache",
     "clean-install": "rm -rf node_modules && npm install && cd ios && rm -rf Pods",
     "build-web": "rm -rf build/ && react-app-rewired build",
-    "build-apk": "cd android && ./gradlew clean && ./gradlew assembleRelease",
     "test": "jest",
     "lint": "eslint .",
     "check": "prettier --check .",
